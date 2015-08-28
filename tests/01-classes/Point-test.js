@@ -1,6 +1,6 @@
 import Point from '../../src/01-classes/Point';
 
-describe('ListItem', () => {
+describe('Point class', () => {
 
     const x = 1;
     const y = 12;
@@ -11,7 +11,7 @@ describe('ListItem', () => {
         component = new Point(x, y);
     });
 
-    it('should print', () => {
+    it('should print correctly', () => {
         expect(component.toString()).to.equal('1 12');
     });
 

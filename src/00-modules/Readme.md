@@ -1,0 +1,1 @@
+ES6 (ES2015) introduces a standardized module format to Javascript. We'll take a look at the various forms of defining and importing modules.
