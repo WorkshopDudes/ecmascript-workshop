@@ -1,6 +1,6 @@
 import Point from '../../src/01-classes/class';
 
-describe.skip('01-classes - create a class', () => {
+describe('01-classes - create a class', () => {
     const x = 1;
     const y = 12;
 

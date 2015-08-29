@@ -1,6 +1,6 @@
 import { sum, multiply } from '../../src/00-modules/named';
 
-describe.skip('00-modules - export two named functions', () => {
+describe('00-modules - export two named functions', () => {
     const x = 2;
     const y = 10;
 

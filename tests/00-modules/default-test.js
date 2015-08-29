@@ -1,6 +1,6 @@
 import math from '../../src/00-modules/default';
 
-describe.skip('00-modules - export two functions by default', () => {
+describe('00-modules - export two functions by default', () => {
     const x = 2;
     const y = 10;
 
