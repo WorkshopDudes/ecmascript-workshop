@@ -4,13 +4,10 @@ describe('01-classes - create a class', () => {
     const x = 1;
     const y = 12;
 
-    var component;
-
-    beforeEach(() => {
-        component = new Point(x, y);
-    });
-
-    it('toString works', () => {
-        expect(component.toString()).to.equal('1 12');
-    });
+    if (Point instanceof Function) {
+        it('toString works', () => {
+            let point = new Point(x, y);
+            expect(point.toString()).to.equal('1 12');
+        });
+    }
 });
