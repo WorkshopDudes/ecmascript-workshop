@@ -52,6 +52,8 @@ console.log(lib.square(11));
 console.log(lib.diag(4, 3));
 ```
 
+Once you import a value you can also re-export it!
+
 ## Default export/import
 
 You may also specify a single default exported value as a convenient shortcut,  

@@ -1,3 +1,8 @@
 import { sum, multiply } from './named';
 
-export default {sum: sum, multiply: multiply};
+var math = {
+    sum: sum,
+    multiply: multiply
+};
+
+export default math;
