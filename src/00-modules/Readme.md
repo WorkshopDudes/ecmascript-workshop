@@ -4,9 +4,15 @@ ECMAScript 6 have built-in support for modules (no more global namespace polluti
 
 We'll take a look at the various forms of defining and importing modules.
 
-##  Export/Import modules 
+In ECMAScript 6, modules are stored in files. 
 
-### Export Syntax
+There is exactly one module per file and one file per module. 
+
+By default anything you declare in a file in a ES6 project is not available outside that file. 
+
+## Named export/import
+
+There can be multiple named exports:
 
 ```
 export var myVar1 = ...;
@@ -31,17 +37,26 @@ You can also export things under different names:
 export { MY_CONST as THE_CONST, myFunc as theFunc };
 ``
 
-### Import Syntax
-
 ```
 import { myFunc, myVar1 } from 'src/mylib';
 import { myFunc as awesomeFunc, myVar1 } from 'src/mylib';
 ```
 
-## Default
+You can also import the complete module (using a wildcard):
+
+```
+import * as lib from 'src/mylib';
+console.log(lib.square(11));
+console.log(lib.diag(4, 3));
+```
+
+
+## Default export/import
 
 The “operand” of a default export is an expression 
-(including function expressions and class expressions). Examples:
+(including function expressions and class expressions). 
+There can be a single default export. 
+Examples:
 
 ```
 export default 123;
@@ -63,12 +78,4 @@ How to import default:
 import theDefault from 'src/mylib';
 import theDefault, { named1, named2 } from 'src/mylib';
 ```
-
-## Wildcard
-
-Importing the module as an object (with one property per named export):
-```
-import * as mylib from 'src/mylib';
-```
-
 
