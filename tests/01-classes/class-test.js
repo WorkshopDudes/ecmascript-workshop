@@ -1,6 +1,6 @@
-import Point from '../../src/01-classes/Point';
+import Point from '../../src/01-classes/class';
 
-describe('Point class', () => {
+describe('01-classes - create class', () => {
 
     const x = 1;
     const y = 12;
@@ -11,8 +11,7 @@ describe('Point class', () => {
         component = new Point(x, y);
     });
 
-    it('should print correctly', () => {
+    it('toString works', () => {
         expect(component.toString()).to.equal('1 12');
     });
-
 });

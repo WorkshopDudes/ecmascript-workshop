@@ -37,6 +37,8 @@ You can also export things under different names:
 export { MY_CONST as THE_CONST, myFunc as theFunc };
 ```
 
+How to import named exports:
+
 ```
 import { myFunc, myVar1 } from 'src/mylib';
 import { myFunc as awesomeFunc, myVar1 } from 'src/mylib';
@@ -52,9 +54,9 @@ console.log(lib.diag(4, 3));
 
 ## Default export/import
 
-The “operand” of a default export is an expression 
-(including function expressions and class expressions). 
-There can be a single default export. 
+You may also specify a single default exported value as a convenient shortcut,  
+by simply naming the exported value "default".
+ 
 Examples:
 
 ```
@@ -71,10 +73,24 @@ export default class {
 };
 ```
 
-How to import default:
+To import a module's default export omit the curly braces in the import statement:
 
 ```
 import theDefault from 'src/mylib';
 import theDefault, { named1, named2 } from 'src/mylib';
 ```
 
+## Code task 1 - export two named functions
+
+In `src/00-modules/named.js` create and export two named functions:
+* sum, a function that add two numbers
+* multiply, a function that multiply two numbers
+
+## Code task 2 - export two functions by default
+
+In `src/00-modules/default.js` export two functions by default:
+* sum, a function that add two numbers
+* multiply, a function that multiply two numbers
+
+By the way! I hope you see that it's the same two functions as in the previous task,
+maybe you don't have to write them again?

@@ -1,6 +1,9 @@
 # ECMAScript Workshop
 
-The next-generation of javascript also known as ECMAScript 6 (also called ES6 or Harmony), is bringing us lots of amazing features that you probably will need to know. 
+The next-generation of javascript also known as ECMAScript 6 (also called ES6 or Harmony), 
+is bringing us lots of amazing features that you probably will need to know, like:
+* classes
+* modules
 
 ## Sugar Syntax
 
