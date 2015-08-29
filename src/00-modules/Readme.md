@@ -35,7 +35,7 @@ You can also export things under different names:
 
 ```
 export { MY_CONST as THE_CONST, myFunc as theFunc };
-``
+```
 
 ```
 import { myFunc, myVar1 } from 'src/mylib';
@@ -49,7 +49,6 @@ import * as lib from 'src/mylib';
 console.log(lib.square(11));
 console.log(lib.diag(4, 3));
 ```
-
 
 ## Default export/import
 
