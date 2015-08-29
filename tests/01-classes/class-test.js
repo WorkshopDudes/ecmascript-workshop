@@ -1,16 +1,11 @@
 import Point from '../../src/01-classes/class';
 
-describe('01-classes - create a class', () => {
+describe.skip('01-classes - create a class', () => {
     const x = 1;
     const y = 12;
 
-    var component;
-
-    beforeEach(() => {
-        component = new Point(x, y);
-    });
-
     it('toString works', () => {
-        expect(component.toString()).to.equal('1 12');
+        let point = new Point(x, y);
+        expect(point.toString()).to.equal('1 12');
     });
 });
