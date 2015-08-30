@@ -21,3 +21,7 @@ So instead of writing the your code using the old tricky way, you'll be able to 
 ## Usage
 
 * `npm test` to start tests in watch mode - will recompile when you change a file.
+
+## References
+
+* [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
