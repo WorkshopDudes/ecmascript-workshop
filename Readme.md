@@ -4,6 +4,8 @@ The next-generation of javascript also known as ECMAScript 6 (also called ES6 or
 is bringing us lots of amazing features that you probably will need to know, like:
 * classes
 * modules
+* arrow functions (todo)
+* template strings (todo)
 
 ## Sugar Syntax
 
