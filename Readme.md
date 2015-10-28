@@ -6,6 +6,8 @@ is bringing us lots of amazing features that you probably will need to know, lik
 * modules
 * arrow functions (todo)
 * template strings (todo)
+* constants, variables and scoping (todo)
+* promises (todo)
 
 ## Sugar Syntax
 
@@ -25,3 +27,4 @@ So instead of writing the your code using the old tricky way, you'll be able to 
 ## References
 
 * [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
+* http://exploringjs.com/es6/
