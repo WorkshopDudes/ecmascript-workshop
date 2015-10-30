@@ -6,7 +6,7 @@ is bringing us lots of amazing features that you probably will need to know, lik
 * modules
 * arrow functions (todo)
 * template strings (todo)
-* constants, variables and scoping (todo)
+* constants, variables and scoping
 * promises (todo)
 
 ## Sugar Syntax
