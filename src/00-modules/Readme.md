@@ -12,6 +12,8 @@ By default anything you declare in a file in a ES6 project is not available outs
 
 ## Named export/import
 
+Export functionality (classes, functions, variables, constants) from a module.
+
 There can be multiple named exports:
 
 ```
