@@ -18,13 +18,13 @@ function Point (x, y) {
      this.y = y;
 }
 
-Person.prototype.move = function move (x, y) {
+Point.prototype.move = function move (x, y) {
     this.x = x;
     this.y = y;
 };
 ```
 
-Person is a constructor function, and it’s also a class, in the JavaScript sense of the word “class. 
+Point is a constructor function, and it’s also a class, in the JavaScript sense of the word “class. 
 
 ## Class Definition
 
