@@ -3,6 +3,13 @@ class Point {
         this.x = x;
         this.y = y;
     }
+
+    static distance(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
     toString() {
         return this.x + ' ' + this.y;
     }
