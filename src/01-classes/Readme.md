@@ -1,5 +1,10 @@
 # Classes
 
+JavaScript classes (ECMAScript 6) provide a much simpler and clearer syntax to create objects and deal with inheritance.
+The class syntax in ECMAScript 6 is not introducing a new object-oriented 
+inheritance model to JavaScript. Under the hood, ECMAScript 6 classes are not something that is radically new. 
+They mainly provide more convenient syntax to create old-school constructor functions. 
+
 ## Prerequisite: Understanding JavaScript Objects
 
 Almost everything in JavaScript are objects (including functions and arrays), except for primitives:
@@ -98,8 +103,7 @@ MyClass.myStaticMethod = function() {
 MyClass.prototype.type = "Awesome object";
 MyClass.prototype.myMethod = function () {};
 
-// Create a new instance (object) with the MyClass() constructor, 
-// thus allowing this new instance to inherit MyClass's properties and methods.​
+// Create a new instance (object) with the MyClass() constructor.
 var instance1 = new MyClass(1);
 var instance2 = new MyClass(2);
 newObj1.myMethod();
@@ -126,10 +130,7 @@ newObj1.hasOwnProperty('id') // true
 The own properties are properties that were defined on the instance, 
 while the inherited properties were inherited from the Function’s Prototype object.
 
-Inline-style: 
-![alt text](https://github.com/BouvetNord/ecmascript-workshop/tree/master/src/01-classes/MyClass.png "MyClass overview")
-
-*** Why is MyClass a function, shouldn’t it be a class?
+### Why is MyClass a function, shouldn’t it be a class?
 
 The new keyword allows us to use a function as a constructor.
 The `instance1` and `instance2` is created and assigned to this for the duration of the call to the MyClass function. 
@@ -137,7 +138,7 @@ MyClass is a constructor function, and it’s also a class, in the JavaScript se
 A constructor function, combined with the new keyword, 
 work together to create new objects in much in the same way classes do in other OO languages.
 
-*** Prototype
+### Prototype
 
 A prototype is an object from which other objects inherit properties.
 
@@ -175,11 +176,6 @@ A class can have subclasses that can inherit all or some of the characteristics 
 This is not very easy to read!
 
 ## Object-oriented programming in ECMAScript 6
-
-JavaScript classes (ECMAScript 6) provide a much simpler and clearer syntax to create objects and deal with inheritance.
-The class syntax in ECMAScript 6 is not introducing a new object-oriented 
-inheritance model to JavaScript. Under the hood, ECMAScript 6 classes are not something that is radically new. 
-They mainly provide more convenient syntax to create old-school constructor functions. 
 
 ### Class Definition
 
