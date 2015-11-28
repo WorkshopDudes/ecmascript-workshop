@@ -1,7 +1,7 @@
 import getFirstPersonAndCountryName from '../../src/06-destructuring/03-nested-destructuring';
 
 let england = {
-    name: "England",
+    name: 'England',
     inhabitants: [
         {
             title: 'Mr',
@@ -17,7 +17,7 @@ let england = {
 };
 
 let usa = {
-    name: "USA",
+    name: 'USA',
     inhabitants: [
         {
             title: 'Ms',
@@ -32,12 +32,12 @@ let usa = {
     ]
 };
 
-describe('06 - Object destructuring - return a string of a given persons full name and title', () => {
-    it('returns a string containing Mr. George Pennybottom', () => {
+describe('06 - Nested destructuring - return a string of a given persons title, full name and country', () => {
+    it('returns a string containing Mr. George Pennybottom comes from England', () => {
         expect(getFirstPersonAndCountryName(england))
         .to.equal('Mr. George Pennybottom comes from England');
     });
-    it('returns a string containing Ms. Mary Poppins', () => {
+    it('returns a string containing Ms. Mary Poppins comes from USA', () => {
         expect(getFirstPersonAndCountryName(usa))
         .to.equal('Ms. Mary Poppins comes from USA');
     });
