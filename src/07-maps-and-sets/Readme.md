@@ -67,8 +67,7 @@ references. The values in a Set are unique (they can only occur once), and can
 be iterated by insertion order. 
 
 Similar to Map, a Set has some convenient ways of manipulating and querying the
-collection, such as ```add()```, ```get()```, ```has()```, ```delete()```, and
-```size```.
+collection, such as ```add()```, ```get()```, ```has()```, ```delete()```, and ```size```.
 
 Example usage:
 
@@ -105,8 +104,8 @@ key values are not allowed. Also, there is no way to get the list of keys or siz
 of a WeakMap. This is because the keys would depend on the state of garbage
 collection, making it
 [non-deterministic](https://en.wikipedia.org/wiki/Nondeterministic_algorithm).
-Other than this, the WeakMap has ```set()```, ```get()```, ```has()```, and
-```delete()``` methods, similar to the regular Map.
+Other than this, the WeakMap has ```set()```, ```get()```, ```has()```, 
+and ```delete()``` methods, similar to the regular Map.
 
 In most cases you probably want to use Map instead of WeakMap. The fact that
 you cannot enumerate, get list of keys, or get the size of the map is a deal
@@ -146,8 +145,7 @@ the WeakSet collection are weakly held, meaning that they can be garbage
 collected if there are no other references to them.
 
 It is not possible to iterate or get the size of a WeakSet, making its use
-cases a bit limited. If you have a WeakSet, the only query you can do is the
-```has()``` method.
+cases a bit limited. If you have a WeakSet, the only query you can do is the ```has()``` method.
 
 One use case could be tagging of DOM elements. Let us say you have a large HTML
 form with a lot of input elements that can be added and removed dynamically.
