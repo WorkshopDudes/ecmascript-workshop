@@ -4,8 +4,8 @@
 */
 var concatenateFirstAndThirdElement = function (elements) {
     var first = elements[0];
-    var third = elements[2]
+    var third = elements[2];
     return first + ' ' + third;
-}
+};
 
 module.exports = concatenateFirstAndThirdElement;
