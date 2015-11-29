@@ -4,7 +4,10 @@
   "description": "Code to be used during ECMAScript workshop",
   "scripts": {
     "test": "karma start ./config/karma.conf.js",
-    "check-updates": "npm-check-updates -u"
+    "check-updates": "npm-check-updates -u",
+    "start": "npm run serve | npm run dev",
+    "serve": "./node_modules/.bin/http-server -p 8080",
+    "dev": "webpack-dev-server --conent-base src/calculator/ --progress --colors --hot --port 8090"
   },
   "author": "Bouvet Nord",
   "license": "MIT",
@@ -16,6 +19,7 @@
     "eslint": "1.2.1",
     "eslint-loader": "1.0.0",
     "eslint-plugin-react": "3.3.0",
+    "http-server": "^0.8.5",
     "karma": "0.13.6",
     "karma-chai": "0.1.0",
     "karma-html-reporter": "0.2.6",
@@ -32,6 +36,7 @@
     "sinon-chai": "2.8.0",
     "underscore": "1.8.3",
     "underscore.string": "3.1.1",
-    "webpack": "1.10.5"
+    "webpack": "1.10.5",
+    "webpack-dev-server": "^1.14.0"
   }
 }
