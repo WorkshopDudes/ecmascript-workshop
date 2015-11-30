@@ -12,11 +12,11 @@ function getNumberOfManufacturers() {
 }
 
 function getAllModels() {
-    var models = [];
-    for (let manufacturer of carMap.keys()) {
-        models = models.concat(carMap.get(manufacturer));
+    var allModels = [];
+    for (let models of carMap.values()) {
+        allModels.push(...models);
     }
-    return models;
+    return allModels;
 }
 
 module.exports = { 
