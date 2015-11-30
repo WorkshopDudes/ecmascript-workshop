@@ -1,12 +1,12 @@
 import ColorPoint from '../../src/01-classes/class-inheritance';
 
-describe.skip('01-classes - class inheritance', () => {
+describe('01-classes - class inheritance', () => {
     const x = 2;
     const y = 10;
     const color = 'orange';
 
     it('instance properties are correct', () => {
-        let point = new ColorPoint(x, y);
+        let point = new ColorPoint(x, y, color);
         expect(point.x).to.equal(x);
         expect(point.y).to.equal(y);
         expect(point.color).to.equal(color);
@@ -17,7 +17,7 @@ describe.skip('01-classes - class inheritance', () => {
         expect(colorPoint.toString()).to.equal('2 10');
     });
 
-    it('color method works', () => {
+    it('getColor method works', () => {
         let colorPoint = new ColorPoint(x, y, color);
         expect(colorPoint.getColor()).to.equal(color);
     });
