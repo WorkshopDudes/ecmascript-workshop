@@ -1,9 +1,12 @@
+var webpack = require('webpack');
+
 module.exports = function (config) {
     config.set({
         browsers: ['PhantomJS'],
         files: [
             // phantomjs needs this to support bind()
             '../node_modules/phantomjs-polyfill/bind-polyfill.js',
+            'polyfills.js',
             // only specify one entry point and require all tests in here
             {
                 pattern: 'tests.bundle.js', watched: false
@@ -12,6 +15,7 @@ module.exports = function (config) {
         frameworks: ['mocha', 'chai', 'sinon'],
         preprocessors: {
             // add webpack as preprocessor
+            'polyfills.js': ['webpack'],
             'tests.bundle.js': ['webpack']
         },
         reporters: ['spec'],
