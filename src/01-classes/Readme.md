@@ -1,9 +1,12 @@
 # Classes
 
 JavaScript classes (ECMAScript 6) provide a much simpler and clearer syntax to create objects and deal with inheritance.
-The class syntax in ECMAScript 6 is not introducing a new object-oriented 
-inheritance model to JavaScript. Under the hood, ECMAScript 6 classes are not something that is radically new. 
-They mainly provide more convenient syntax to create old-school constructor functions. 
+
+## Syntactic Sugar
+
+Classes aren't really 'classes', instead they are functions which are in turn objects
+
+It’s important to understand that while JavaScript is an object-oriented language, it is prototype-based (objects inherit from other objects) and does not implement a traditional class system.
 
 ## Prerequisite: Understanding JavaScript Objects
 
@@ -82,49 +85,32 @@ console.log('key1' in myObject); // true
 
 ## Object-oriented programming in ECMAScript 5
 
-It’s important to understand that while JavaScript is an object-oriented language,
-it is prototype-based and does not implement a traditional class system. 
-
 In ECMAScript 5 we have always been able to create JavaScript classes like this:
 
 ```
-// Constructor
 function MyClass (id) {
-     // Instance properties can be set on each instance of the class
+     var privateField = "My secret";
+     // Instance properties
      this.id = id;
 }
 
-// A static method. This method only exists on the class and doesn't exist on child objects
-MyClass.myStaticMethod = function() { 
-	console.log('hello'); 
-};
-
-// Prototype properties are shared across all instances of the class
-MyClass.prototype.type = "Awesome object";
+// Prototype methods are shared across all instances of the class
 MyClass.prototype.myMethod = function () {};
 
 // Create a new instance (object) with the MyClass() constructor.
 var instance1 = new MyClass(1);
 var instance2 = new MyClass(2);
-newObj1.myMethod();
 
-MyClass.myStaticMethod(); 
-```
-
-Now both instances have their own unique id, but they are both of type "Awesome object" and both can call `myMethod()`.
-
-By the way, prototypes having data properties is generally considered an anti-pattern.
-
-The constructor property of the instance is set to MyClass:
-
-```
-newObj1.constructor == MyClass  // true
-newObj1 instanceof MyClass      // true
+instance1.myMethod();
+instance1.id; // 1
+instance2.myMethod();
+instance2.id; // 2
+instance1 instanceof MyClass; // true
 ```
 
 Objects have inherited properties and own properties:
 ```
-newObj1.hasOwnProperty('type') // false
+newObj1.hasOwnProperty('myMethod') // false
 newObj1.hasOwnProperty('id') // true
 ```
 The own properties are properties that were defined on the instance, 
@@ -132,11 +118,9 @@ while the inherited properties were inherited from the Function’s Prototype ob
 
 ### Why is MyClass a function, shouldn’t it be a class?
 
-The new keyword allows us to use a function as a constructor.
-The `instance1` and `instance2` is created and assigned to this for the duration of the call to the MyClass function. 
-MyClass is a constructor function, and it’s also a class, in the JavaScript sense of the word “class". 
-A constructor function, combined with the new keyword, 
-work together to create new objects in much in the same way classes do in other OO languages.
+MyClass is a constructor function, and combined with the new keyword, work together to create new objects in much in the same way classes do in other OO languages.
+
+When you create an object using the new keyword, it creates a new object, passes it in as this to the constructor function.
 
 ### Prototype
 
@@ -149,7 +133,24 @@ it comes with a few pre-defined properties and one of these is the illusive prot
 When an object is constructed, it inherits all of the properties of its constructor’s prototype.
 * You can add methods and properties on a function’s prototype property 
 to make those methods and properties available to instances of that function.
-The implications for performance and maintenance are obvious and significant.
+The implications for performance and maintenance are obvious and significant. 
+Methods that inherit via the prototype chain can be changed universally for all instances.
+
+### How does prototype inheritance work?
+
+Every object in JavaScript has a special related object called the prototype.
+
+```
+vehicle.__proto__ = machine
+// machine is the prototype of vehicle
+
+car.__proto__ = vehicle
+// vehicle is the prototype of car
+```
+
+This is a prototype chain: car -> vehicle -> machine
+
+When looking up a property, Javascript will try to find the property in the object itself. If it does not find it then it tries in it's prototype, and so on.
 
 ### Subclasses
 
@@ -171,20 +172,30 @@ MySubClass.prototype.myMethod = function() {
 }
 
 ```
-A class can have subclasses that can inherit all or some of the characteristics of the class.
 
 This is not very easy to read!
+
+### Static methods
+
+```
+function MyClass () {}
+
+// A static method that only exists on the class and doesn't exist on derived classes
+MyClass.myStaticMethod = function() { 
+	console.log('hello'); 
+};
+
+MyClass.myStaticMethod(); 
+```
 
 ## Object-oriented programming in ECMAScript 6
 
 ### Class Definition
 
 One way to define a class in ECMAScript 6 is using a class declaration.
+
 ECMAScript 6 provides the `class` keyword and `compact method notation` as syntactic sugar for writing a
-function and assigning methods to its prototype (there is a little more involved, but that isn’t relevant here). 
-The constructor method is a special method for creating and initializing an object created with a class. 
-There can only be one special method with the name "constructor" in a class. 
-A SyntaxError will be thrown if the class contains more than one occurrence of a constructor method.
+function and assigning methods to its prototype.
 
 ```
 class MyClass {
@@ -195,11 +206,15 @@ class MyClass {
 }
 let instance = new MyClass(1);
 instance instanceof MyClass; // true
-typeof MyClass // 'function' (the result of a class definition is a function)
+typeof MyClass // 'function' (old-school constructor function)
+instance.hasOwnProperty("myMethod"); // false
+MyClass.prototype.myMethod(); // It is still prototype-based!
 ```
 
 The body of a class is the part that is in curly brackets {}.
 This is where you define class members, such as methods or constructors.
+
+This is the prototype chain: MyClass -> Object
 
 ### Subclasses
 
@@ -214,6 +229,8 @@ class MySubClass extends MyClass {
 ```
 
 A constructor can use the super keyword to call the constructor of a parent class.
+
+This is the prototype chain: MySubClass -> MyClass -> Object
 
 ## Static methods
 
