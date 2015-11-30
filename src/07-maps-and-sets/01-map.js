@@ -1,31 +1,37 @@
 /*
-    Task: 
-    Store country and capitals as key-value pairs in a Map instead of an
-    object. Use country as key, and capital as value. Then make sure 
-    getCapitalStrings() still returns the same data.
+    TASK
+    ----
 
-    Expected output is an array of the following strings:
-    [ 
-        'The capital of Norway is Oslo',
-        'The capital of Sweden is Stockholm',
-        'The capital of Denmark is Copenhagen',
-        'The capital of Iceland is Reykjavik',
-        'The capital of Finland is Helsinki'
-    ]
+    In ES5 we often use objects to store key-value pairs, like the carMap
+    object below. In ES6 we can use Map instead. Rewrite the carMap object to
+    be a Map, and modify the functions so that it works with the Map data 
+    structure.
 */
 
-var capitals = {
-    Norway: 'Oslo',
-    Sweden: 'Stockholm',
-    Denmark: 'Copenhagen',
-    Iceland: 'Reykjavik',
-    Finland: 'Helsinki'
+var carMap = {
+    'Toyota': ['Avensis', 'Auris', 'Yaris'],
+    'Opel': ['Astra', 'Vectra'],
+    'Mercedes-Benz': ['A-Klasse', 'B-Klasse', 'C-Klasse']
 };
 
-function getCapitalStrings() {
-    return Object.keys(capitals).map(function (country) {
-        return 'The capital of ' + country + ' is ' + capitals[country];
-    });
+function getModels(manufacturer) {
+    return carMap[manufacturer];
 }
 
-module.exports = getCapitalStrings;
+function getNumberOfManufacturers() {
+    return Object.keys(carMap).length;
+}
+
+function getAllModels() {
+    var models = [];
+    Object.keys(carMap).forEach(function (manufacturer) {
+        models = models.concat(carMap[manufacturer]);
+    });
+    return models;
+}
+
+module.exports = { 
+    getModels: getModels,
+    getNumberOfManufacturers: getNumberOfManufacturers,
+    getAllModels: getAllModels
+};
