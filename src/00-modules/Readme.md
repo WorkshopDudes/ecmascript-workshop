@@ -4,23 +4,24 @@ ECMAScript 6 have built-in support for modules (no more global namespace polluti
 
 There is exactly one module per file and one file per module. 
 
-By default anything you declare in a file is not available outside that file. 
+By default anything you declare in a file is not available outside that file (awesome). 
 
 ## Named export/import
 
-Export functionality (classes, functions, variables, constants) from a module.
+Modules can export multiple objects, which could be simple variables or functions.
 
-There can be multiple named exports:
+A module can export multiple things by prefixing its declarations with the keyword export:
 
 ```
 export var myVar1 = ...;
-export let myVar2 = ...;
 export const MY_CONST = ...;
 export function myFunc() {}
 export class MyClass {}
 ```
 
-You can list everything you want to export at the end of the module 
+These exports are distinguished by their names and are called named exports.
+
+You can also list everything you want to export at the end of the module 
 (which is once again similar in style to the revealing module pattern):
 
 ```
@@ -38,16 +39,16 @@ export { MY_CONST as THE_CONST, myFunc as theFunc };
 How to import named exports:
 
 ```
-import { myFunc, myVar1 } from 'src/mylib';
-import { myFunc as awesomeFunc, myVar1 } from 'src/mylib';
+import { myFunc } from 'lib';
+import { myFunc, myVar1 } from 'lib';
+import { myFunc as awesomeFunc, myVar1 } from 'lib';
 ```
 
 You can also import the complete module (using a wildcard):
 
 ```
-import * as lib from 'src/mylib';
-console.log(lib.square(11));
-console.log(lib.diag(4, 3));
+import * as lib from 'lib';
+lib.myFunc();
 ```
 
 Once you import a value you can also re-export it!
@@ -60,37 +61,51 @@ by simply naming the exported value "default".
 Examples:
 
 ```
-export default 123;
-export default function (x) {
-    return x
-};
-export default x => x;
-export default class {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
+export default class {}
 };
 ```
 
-To import a module's default export omit the curly braces in the import statement:
+Import single default export:
+```
+import MyClass from 'MyClass';
+var instance = new MyClass();
+```
+
+Module can have both named exports and a default export.
+
+In such cases, to import a module's default export, you have to omit the curly braces in the import statement:
 
 ```
-import theDefault from 'src/mylib';
-import theDefault, { named1, named2 } from 'src/mylib';
+import myDefault from 'lib';
+import myDefault, { foo, bar } from 'lib';
+```
+
+Having the ability to define named exports, exporting a list with aliases and whatnot,
+and also exposing a a “default” export will mostly introduce confusion, 
+and for the most part I’d encourage you to use export default – 
+and to do that at the end of your module files.
+
+Something like this:
+
+```
+var api = {
+  foo: 'bar',
+  baz: 'ponyfoo'
+}
+export default api
 ```
 
 ## Code task 1 - export two named functions
 
 In `src/00-modules/named.js` create and export two named functions:
-* sum, a function that add two numbers
-* multiply, a function that multiply two numbers
+* sum(x,y) - A function that add two numbers
+* multiply(x,y) - A function that multiply two numbers
 
 ## Code task 2 - export two functions by default
 
-In `src/00-modules/default.js` export two functions by default:
-* sum, a function that add two numbers
-* multiply, a function that multiply two numbers
+In `src/00-modules/default.js` import the two functions created in the previous task, 
+then export them again, but as single default export.
 
-By the way! I hope you see that it's the same two functions as in the previous task,
-maybe you don't have to write them again?
+# References
+
+* https://ponyfoo.com/articles/es6-modules-in-depth
