@@ -1,4 +1,4 @@
-var PLAYERS = [
+let PLAYERS = [
     'Lloris',
     'Walker',
     'Vertonghen',
@@ -16,11 +16,7 @@ var PLAYERS = [
 ];
 
 function getUniquePlayers() {
-    let uniquePlayers = new Set();
-    PLAYERS.forEach(player => {
-        uniquePlayers.add(player);
-    });
-    return Array.from(uniquePlayers);
+    return Array.from(new Set(PLAYERS));
 }
 
 module.exports = getUniquePlayers;

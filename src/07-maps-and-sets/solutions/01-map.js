@@ -1,4 +1,4 @@
-var carMap = new Map();
+let carMap = new Map();
 carMap.set('Toyota', ['Avensis', 'Auris', 'Yaris']);
 carMap.set('Opel', ['Astra', 'Vectra']);
 carMap.set('Mercedes-Benz', ['A-Klasse', 'B-Klasse', 'C-Klasse']);
@@ -12,7 +12,7 @@ function getNumberOfManufacturers() {
 }
 
 function getAllModels() {
-    var allModels = [];
+    let allModels = [];
     for (let models of carMap.values()) {
         allModels.push(...models);
     }
