@@ -24,14 +24,3 @@ You can now write:
 var multiline = `Thank you Mario!
 But our princess is in another castle.`;
 ```
-
-## Code task 1 - Variable substitution
-
-Change the ```log``` method in ```variable-substitution.js``` to use embedded
-expressions instead of concatenated strings.
-
-## Code task 2 - Multiline strings
-
-In the ```printLyrics``` method in ```multiline-strings.js```, remove all
-string concatenations and ```\n``` characters, and use a multiline string with
-embedded expressions instead.

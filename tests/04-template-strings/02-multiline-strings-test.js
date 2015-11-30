@@ -1,6 +1,6 @@
-import getLyrics from '../../src/04-template-strings/multiline-strings';
+import getLyrics from '../../src/04-template-strings/02-multiline-strings';
 
-describe.skip('04-template-strings - multiline strings', () => {
+describe('04-template-strings - multiline strings', () => {
 
     it('multiline string works', () => {
         expect(getLyrics()).to.equal(`Never gonna give you up

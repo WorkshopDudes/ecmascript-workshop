@@ -1,3 +1,13 @@
+/*
+    TASK
+    ----
+
+    In the printLyrics() function, remove all string concatenations and '\n'
+    characters, and use a multiline string with embedded expressions instead.
+*/
+
+
+
 var prefix = 'Never gonna';
 
 function printLyrics() {
