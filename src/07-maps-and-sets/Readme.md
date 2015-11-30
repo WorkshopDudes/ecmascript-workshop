@@ -44,8 +44,8 @@ let offices = new Map();
 offices.set('North', 'Trondheim')
        .set('East', 'Oslo')
        .set('Rogaland', 'Stavanger');
-for (let region of offices) {
-    console.log(`The Bouvet ${region} office is in ${offices.get(region)}`);
+for (let [region, city] of offices) {
+    console.log(`The Bouvet ${region} office is in ${city}`);
 }
 console.log(`There are ${offices.size} offices`);
 ```
