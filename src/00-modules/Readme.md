@@ -2,13 +2,9 @@
 
 ECMAScript 6 have built-in support for modules (no more global namespace pollution).
 
-We'll take a look at the various forms of defining and importing modules.
-
-In ECMAScript 6, modules are stored in files. 
-
 There is exactly one module per file and one file per module. 
 
-By default anything you declare in a file in a ES6 project is not available outside that file. 
+By default anything you declare in a file is not available outside that file. 
 
 ## Named export/import
 
