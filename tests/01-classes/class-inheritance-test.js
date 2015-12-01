@@ -1,4 +1,4 @@
-import ColorPoint from '../../src/01-classes/class-inheritance';
+import ColorPoint from '../../src/01-classes/solutions/class-inheritance';
 
 describe('01-classes - class inheritance', () => {
     const x = 2;
@@ -10,6 +10,11 @@ describe('01-classes - class inheritance', () => {
         expect(point.x).to.equal(x);
         expect(point.y).to.equal(y);
         expect(point.color).to.equal(color);
+    });
+
+    it('default parameters are correct', () => {
+        let point = new ColorPoint(x, y);
+        expect(point.color).to.equal('red');
     });
 
     it('toString method works (inherited)', () => {

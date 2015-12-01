@@ -265,7 +265,7 @@ You use getters and setters as follows:
 > instance.prop = 123;
 setter: 123
 > instance.prop
-'getter'
+'getter' 
 ```
 
 ## Code task 3 - create class 
@@ -297,12 +297,11 @@ module.exports = Point;
 Extend the Point class from previous task 
 so that it behaves equal to the ECMAScript 5 code below:
 
-
 ```
 // Child class constructor
 var ColorPoint = function (x, y, color) {
     Point.call(this, x, y);
-    this.color = color;
+    this.color = color || 'red';
 };
 
 // Inherit from the parent class
@@ -314,6 +313,12 @@ ColorPoint.prototype.getColor = function () {
     return this.color;
 };
 module.exports = ColorPoint;
+```
+
+By the way, ECMAScript 6 support default values for function parameters.
+```
+function myFunction(x=1337) {}
+
 ```
 
 # References
