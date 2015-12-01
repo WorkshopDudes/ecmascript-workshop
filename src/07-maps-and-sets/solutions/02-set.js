@@ -1,26 +1,32 @@
-var PLAYERS = [
-    'Lloris',
-    'Walker',
-    'Vertonghen',
-    'Vertonghen',
-    'Alderweireld',
-    'Rose',
-    'Dembele',
-    'Dembele',
-    'Eriksen',
-    'Son',
-    'Dier',
-    'Dembele',
-    'Mason',
-    'Kane'
+var ACTORS = [
+    'Connery',
+    'Travolta',
+    'Travolta',
+    'Cage',
+    'Portman',
+    'Portman',
+    'Seagal',
+    'Bullock',
+    'Travolta',
+    'Hanks',
+    'Depp',
+    'Pitt'
 ];
 
-function getUniquePlayers() {
-    let uniquePlayers = new Set();
-    PLAYERS.forEach(player => {
-        uniquePlayers.add(player);
+function getUniqueActors() {
+    let set = Set();
+    ACTORS.forEach(actor => {
+        set.add(actor);
     });
-    return Array.from(uniquePlayers);
+    return Array.from(set);
 }
 
-module.exports = getUniquePlayers;
+/*
+Alternatively, just:
+
+function getUniqueActors() {
+    return Array.from(new Set(ACTORS));
+}
+*/
+
+module.exports = getUniqueActors;

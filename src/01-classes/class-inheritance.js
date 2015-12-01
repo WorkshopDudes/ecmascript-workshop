@@ -2,7 +2,7 @@ import Point from './class';
 
 var ColorPoint = function (x, y, color) {
     Point.call(this, x, y);
-    this.color = color;
+    this.color = color || 'red';
 };
 
 ColorPoint.prototype = Object.create(Point.prototype);

@@ -1,49 +1,48 @@
 /*
     TASK
     ----
-    We have an array of players. Unfortunately, the array contains some
-    duplicates. We only want unique players, so we have created a function
-    getUniquePlayers() that generates a new array that is duplicate-free.
+    We have an array of actors. Unfortunately, the array contains some
+    duplicates. We only want unique actors, so we have created a function
+    getUniqueActors() that generates a new array that is duplicate-free.
 
     With the introduction of Set in ES6, this can be simplified quite a bit.
-    Change the getUniquePlayers() to use a Set in order to create a unique
-    array of players.
+    Change the getUniqueActors() to use a Set in order to create a unique
+    array of actors. Hint: You can use Array.from() to convert a Set to an 
+    array.
 
     EXPECTED OUTPUT
     ---------------
-    ['Lloris', 'Walker', 'Vertonghen', 'Alderweireld', 'Rose', 'Dembele', 
-     'Eriksen', 'Son', 'Dier', 'Mason', 'Kane']
+    ['Connery', 'Travolta', 'Cage', 'Portman', 'Seagal', 'Bullock', 
+     'Hanks', 'Depp', 'Pitt']
 
     BONUS QUESTION
     --------------
     Could we use a WeakSet instead of Set here?
 */
 
-var PLAYERS = [
-    'Lloris',
-    'Walker',
-    'Vertonghen',
-    'Vertonghen',
-    'Alderweireld',
-    'Rose',
-    'Dembele',
-    'Dembele',
-    'Eriksen',
-    'Son',
-    'Dier',
-    'Dembele',
-    'Mason',
-    'Kane'
+var ACTORS = [
+    'Connery',
+    'Travolta',
+    'Travolta',
+    'Cage',
+    'Portman',
+    'Portman',
+    'Seagal',
+    'Bullock',
+    'Travolta',
+    'Hanks',
+    'Depp',
+    'Pitt'
 ];
 
-function getUniquePlayers() {
-    var uniquePlayers = [];
-    PLAYERS.forEach(function (player) {
-        if (!arrayContains(uniquePlayers, player)) {
-            uniquePlayers.push(player);
+function getUniqueActors() {
+    var uniqueActors = [];
+    ACTORS.forEach(function (actor) {
+        if (!arrayContains(uniqueActors, actor)) {
+            uniqueActors.push(actor);
         }
     });
-    return uniquePlayers;
+    return uniqueActors;
 }
 
 function arrayContains(array, item) {
@@ -52,4 +51,4 @@ function arrayContains(array, item) {
     });
 }
 
-module.exports = getUniquePlayers;
+module.exports = getUniqueActors;
