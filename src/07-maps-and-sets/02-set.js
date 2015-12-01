@@ -7,7 +7,8 @@
 
     With the introduction of Set in ES6, this can be simplified quite a bit.
     Change the getUniqueActors() to use a Set in order to create a unique
-    array of actors.
+    array of actors. Hint: You can use Array.from() to convert a Set to an 
+    array.
 
     EXPECTED OUTPUT
     ---------------
