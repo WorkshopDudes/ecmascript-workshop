@@ -51,10 +51,11 @@ Javascript has, like Java and Python, a lexical scope. Before "let", it also had
 
 Lexical scoping means that the variables are defined by their position in the source code. When a variable needs to be resolved, Javascript starts at the innermost scope. If the variable is not found, the parent scope will be searched next. This is repeated until if finds the value.
 
-Until arrow functions, every new function defined its own this value (a new object in case of a constructor, the context object if the function is called as an "object method", etc.). This proved to be annoying with an object-oriented style of programming.
+Until arrow functions, every new function defined its own this value (a new object in case of a constructor, the context object if the function is called as an "object method", etc.). An object method is a method that typically is called like "object.method()".
 
-A common thing that might cause unexpected behavior is when you use a function that is defined in another scope, combined with using this in the callback function.
-One example is the setInterval function which is located on the global scope.
+A common thing that might cause unexpected behavior is when you use a function within an object that is not an object method, (like a nested function). If the this keyword is used within that function, it will not be reached, and you will get "undefined".
+
+One example is when using the setInterval function which is located on the global scope.
 
 ```
 //Every function define its own this, but when a object method calls this
