@@ -11,7 +11,7 @@ more closely to an iterator; a generator is in fact a type of iterator.
 
 ## Gang of Three
 
-There are 3 types of generators, namely: Iterators, Observers and Co-routines. I will describe them all below.
+There are 3 types of generators, namely: *Iterators*, *Observers* and *Co-routines*. I will describe them all below.
 
 ### Iterators
 
@@ -145,7 +145,10 @@ myProducer.next(); // will continue, and execute (B). Generator is done.
 ## More Resources
 
 [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) Look for: iterator, generator, function*, yield, yield*
+
 [A thorough guide to generators](http://www.2ality.com/2015/03/es6-generators.html)
+
 [Another guide to JS generators](http://gajus.com/blog/2/the-definitive-guide-to-the-javascript-generators)
+
 [Yet another guide to JS generators](http://tobyho.com/2013/06/16/what-are-generators/)
 
