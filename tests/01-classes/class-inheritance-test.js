@@ -1,4 +1,4 @@
-import ColorPoint from '../../src/01-classes/solutions/class-inheritance';
+import ColorPoint from '../../src/01-classes/class-inheritance';
 
 describe('01-classes - class inheritance', () => {
     const x = 2;
