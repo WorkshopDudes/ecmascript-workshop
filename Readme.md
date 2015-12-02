@@ -1,7 +1,6 @@
 # ECMAScript Workshop
 
-The next-generation of javascript also known as ECMAScript 6 (also called ES6 or Harmony),
-is bringing us lots of amazing features that you probably will need to know, like:
+The next generation of JavaScript, also known as ECMAScript 6 / ECMAScript 2015 / Harmony, is bringing us lots of amazing features that you probably will need to know, like:
 * Modules
 * Variables & scope
 * Template strings
@@ -13,11 +12,11 @@ is bringing us lots of amazing features that you probably will need to know, lik
 * Maps/Sets
 * Iterator & iterable
 
-## Sugar Syntax
+This repository contains a short description and coding tasks for each feature. In most of the tasks, the goal is to modify the old ES5 syntax to use the new features from ES6. There are tests for each task, so that you can verify that your code is correct.
 
-First of all, Syntactic Sugar is a syntax that make a language easier to understand and more readable, it makes the language "sweeter" for us.
-It also means that some "new" features of ES6 are not really new because ES6 is trying to simplify the syntax to make things easier for us.
-So instead of writing the your code using the old tricky way, you'll be able to code in a the simpler way, with sugar syntax.
+## Slides
+
+The slides used for the presentation can be found on http://bouvetnord.github.io/ecmascript-workshop-slides.
 
 ## Installation
 
