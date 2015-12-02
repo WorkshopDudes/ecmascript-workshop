@@ -10,29 +10,29 @@ number. There are probably more than one solution to this, but we are looking fo
 The run method should still be used to transfer data from producer to consumer, and you may have to modify that one as well as a loop...
 	
 */
-"use strict";
+'use strict';
 function producer() {
-	var i = 1;
-	var mylist = [];
-	while (i <= 10) {
-		mylist.push(i);
-		i++;
-	}
-	return mylist;
+    var i = 1;
+    var mylist = [];
+    while (i <= 10) {
+        mylist.push(i);
+        i++;
+    }
+    return mylist;
 }
 var newList = [];
 function consumer(vals) {
-	for(let i of vals) {
-		newList.push(i*i);
-	}
+    for(let i of vals) {
+        newList.push(i*i);
+    }
 }
 
 function run() {
-	var mylist = producer();	
-	consumer(mylist);
-	return newList;
+    var mylist = producer();	
+    consumer(mylist);
+    return newList;
 }
 
 module.exports = {
-	run: run
+    run: run
 };
