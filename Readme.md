@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/WorkshopDudes/ecmascript-workshop.svg?branch=master)](https://travis-ci.org/WorkshopDudes/ecmascript-workshop)
+
 # ECMAScript Workshop
 
 The next generation of JavaScript, also known as ECMAScript 6 / ECMAScript 2015 / Harmony, is bringing us lots of amazing features that you probably will need to know, like:
